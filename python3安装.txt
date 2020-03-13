@@ -1,0 +1,30 @@
+linux下安装Python3.6
+
+安装步骤如下：
+
+[root@hadoop ~]# yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel #安装依赖环境
+ 
+[root@hadoop ~]# wget https://www.python.org/ftp/python/3.6.1/Python-3.6.1.tgz #下载Python3
+ 
+[root@hadoop ~]# mv Python-3.6.1.tgz /usr/local/ #移动安装包
+[root@hadoop ~]# cd /usr/local/
+[root@hadoop local]# tar -xzvf Python-3.6.1.tgz #解压缩
+[root@hadoop local]# mv Python-3.6.1/ python3 #重命名
+ 
+[root@hadoop local]# cd python3/
+[root@hadoop python3]# ./configure --prefix=/usr/local/python3 #编译
+ 
+[root@hadoop python3]# make && make install #安装
+ 
+[root@hadoop python3]#  vi ~/.bash_profile  #修改配置文件
+在PATH后面添加：:/usr/local/python3/bin
+[root@hadoop python3]#  source ~/.bash_profile #使配置文件生效
+ 
+[root@hadoop python3]# ln -s /usr/local/python3/bin/python3 /usr/bin/python3 #建立python3的软链接
+ 
+[root@hadoop python3]# python3 -V #测试python3是否可用
+Python 3.6.1
+[root@hadoop python3]# pip3 -V #测试pip3是否可用
+pip 9.0.1 from /usr/local/python3/lib/python3.6/site-packages (python 3.6)
+ 
+[root@hadoop python3]# ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3 #如果pip3不可用的话，可以尝试建立pip3的软链接
