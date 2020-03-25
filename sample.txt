@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+  <Code>NoSuchKey</Code>
+  <Message>The specified key does not exist.</Message>
+  <RequestId>5E79D04D8E8E2E333031C5CB</RequestId>
+  <HostId>labfile.oss.aliyuncs.com</HostId>
+  <Key>s&#08;coures/596/sample.txt</Key>
+</Error>
